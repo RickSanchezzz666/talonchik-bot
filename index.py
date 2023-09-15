@@ -26,7 +26,7 @@ while True:
             time.sleep(3) 
         except NoSuchElementException:
             pass
-        time.sleep(3)
+        time.sleep(1)
         first_location = driver.find_element('css selector', "img[style*='z-index: 194']") # координата міста по z-index у її css style
         first_location.click()
         time.sleep(2)
@@ -36,14 +36,14 @@ while True:
             second_location.click()
             sound.play()
             print('Талончик знайдено!')
-            time.sleep(3)
+            time.sleep(2.5)
             final_location = driver.find_element('css selector', '.btn-hsc-green')
             final_location.click()
             input('Нажми Enter для завершення...')
             break
         except NoSuchElementException:
             driver.refresh()
-            time.sleep(3)
+            time.sleep(1)
     except NoSuchElementException:
             driver.refresh()
-            time.sleep(3)
+            time.sleep(1)
