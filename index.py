@@ -20,22 +20,26 @@ time.sleep(40)
 
 while True:
     try:
-        err_elem = driver.find_element(By.XPATH, "//*[contains(text(), 'nginx')]")
-        driver.refresh()
-        time.sleep(3) 
-    except NoSuchElementException:
-        pass
-    time.sleep(3)
-    first_location = driver.find_element('css selector', "img[style*='z-index: 194']") # координата міста по z-index у її css style
-    first_location.click()
-    time.sleep(2)
-
-    try:
-        second_location = driver.find_element('css selector', '#submit')
-        sound.play()
-        print('Талончик знайдено!')
-        input('Нажми Enter для завершення...')
-        break
-    except NoSuchElementException:
-        driver.refresh()
+        try:
+            err_elem = driver.find_element(By.XPATH, "//*[contains(text(), 'nginx')]")
+            driver.refresh()
+            time.sleep(3) 
+        except NoSuchElementException:
+            pass
         time.sleep(3)
+        first_location = driver.find_element('css selector', "img[style*='z-index: 194']") # координата міста по z-index у її css style
+        first_location.click()
+        time.sleep(2)
+
+        try:
+            second_location = driver.find_element('css selector', '#submit')
+            sound.play()
+            print('Талончик знайдено!')
+            input('Нажми Enter для завершення...')
+            break
+        except NoSuchElementException:
+            driver.refresh()
+            time.sleep(3)
+    except NoSuchElementException:
+            driver.refresh()
+            time.sleep(3)
