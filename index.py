@@ -33,8 +33,12 @@ while True:
 
         try:
             second_location = driver.find_element('css selector', '#submit')
+            second_location.click()
             sound.play()
             print('Талончик знайдено!')
+            time.sleep(3)
+            final_location = driver.find_element('css selector', '.btn-hsc-green')
+            final_location.click()
             input('Нажми Enter для завершення...')
             break
         except NoSuchElementException:
