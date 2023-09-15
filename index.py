@@ -13,7 +13,7 @@ pygame.mixer.init()
 sound = pygame.mixer.Sound('alert.mp3')
 sound.set_volume(1.0)
 
-driver.get('https://eq.hsc.gov.ua/site/step2?chdate=2023-09-16&question_id=55&id_es=') #силка на карту з датою
+driver.get('https://eq.hsc.gov.ua/site/step2?chdate=2023-09-16&question_id=55&id_es=') #силка на карту з вибраною дату, наприклад: ДАТА ПРИЙОМУ — 16.09.23
 
 
 time.sleep(40)
